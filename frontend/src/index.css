@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply min-h-screen bg-sand bg-mesh-radial text-ink font-sans antialiased;
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+* {
+  scrollbar-color: rgba(37, 99, 235, 0.35) rgba(226, 232, 240, 0.9);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.35);
+  border-radius: 999px;
+}
+
+.scenic-hero {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.95) 0 2.5%, transparent 2.7% 100%),
+    radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.88) 0 2.2%, transparent 2.4% 100%),
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.9) 0 2%, transparent 2.2% 100%),
+    linear-gradient(155deg, transparent 0 54%, rgba(255, 247, 205, 0.96) 54.2% 68%, transparent 68.2%),
+    linear-gradient(167deg, transparent 0 48%, rgba(206, 236, 124, 0.95) 48.2% 58%, transparent 58.2%),
+    linear-gradient(173deg, transparent 0 55%, rgba(118, 201, 112, 0.9) 55.2% 64%, transparent 64.2%),
+    linear-gradient(180deg, #55adff 0%, #8ed2ff 48%, #eefcff 100%);
+}
+
+.scenic-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background:
+    radial-gradient(circle at 7% 80%, #f97316 0 3%, transparent 3.2%),
+    radial-gradient(circle at 11% 72%, #facc15 0 2.2%, transparent 2.4%),
+    radial-gradient(circle at 92% 75%, #f97316 0 3%, transparent 3.2%),
+    linear-gradient(171deg, transparent 0 18%, rgba(255, 251, 235, 0.98) 18.4% 100%);
+}
+
+.scenic-hero::after {
+  content: "";
+  position: absolute;
+  left: 32%;
+  bottom: 18%;
+  width: 20%;
+  height: 10px;
+  border-radius: 999px;
+  background: #fb923c;
+  transform: rotate(-18deg);
+  box-shadow: 28px -12px 0 -2px rgba(251, 146, 60, 0.78);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ambient-shift {
+    animation: ambient-shift 16s ease-in-out infinite alternate;
+  }
+
+  @keyframes ambient-shift {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-8px);
+    }
+  }
+}
